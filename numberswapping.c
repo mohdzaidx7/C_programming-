@@ -1,26 +1,23 @@
 #include <stdio.h>
-int main()
-{
-   int x, y;
-   
-    printf("Enter first number: ");
-	scanf("%d", &x);
-	printf("Enter second number: ");
-	scanf("%d", &y);  
-	
-	printf ("Before swapping: \n");
-    printf ("First variable: %d\n", x);
-    printf ("Second variable: %d\n", y);
-    
-    x = x + y;
-    y = x - y;
-    x = x - y;
 
-	printf ("After swapping: \n");
-    printf ("First variable: %d\n", x);
-    printf ("Second variable: %d\n", y);    
-    
+int main() {
+    int a, b, temp;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
 
-	return 0;
-	
+    printf("\nBefore swapping: a = %d, b = %d\n", a, b);
+
+    // Swapping using third variable
+    temp = a;
+    a = b;
+    b = temp;
+    printf("After swapping (using third variable): a = %d, b = %d\n", a, b);
+
+    // Swapping without using third variable
+    a = a + b;
+    b = a - b;
+    a = a - b;
+    printf("After swapping (without third variable): a = %d, b = %d\n", a, b);
+
+    return 0;
 }
